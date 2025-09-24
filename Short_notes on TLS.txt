@@ -99,5 +99,5 @@ HSTS: "This website MUST use HTTPS, no exceptions"
 Certificate Pinning: "Only accept certificates from these specific companies"
 Like: Having multiple locks on your front door
 
-
+Based on hpbn TLS : https://hpbn.co/transport-layer-security-tls/ 
 
