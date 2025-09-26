@@ -56,11 +56,11 @@ ip netns exec NS2 sysctl -w net.ipv4.ip_forward=1
 #generate the certificates using openssl 
 openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes
 
-#on NS1 can be NS3 also
-ip netns exec NS1 openssl s_client -dtls -connect 10.0.2.2:4444
-
 #on NS3 can be NS1 also
 ip netns exec NS3 openssl s_server -dtls -accept 4444 -cert server.crt -key server.key
+
+#on NS1 can be NS3 also
+ip netns exec NS1 openssl s_client -dtls -connect 10.0.2.2:4444
 
 #on NS2 to view packets 
 ip netns exec NS2 tcpdump -i any -n udp
